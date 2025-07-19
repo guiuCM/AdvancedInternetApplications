@@ -1,0 +1,15 @@
+ARG NODE_IMG_VERSION=14
+FROM node:${NODE_IMG_VERSION}
+
+RUN mkdir /opt/app/
+WORKDIR /opt/app
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 8000
+
+CMD npm start

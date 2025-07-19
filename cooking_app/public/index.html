@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>What can I cook?</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 600px; margin: 30px auto; }
+    input, button { font-size: 1rem; padding: 8px; }
+    button { margin-left: 10px; }
+    .recipe { border: 1px solid #ccc; padding: 10px; margin-top: 15px; border-radius: 5px; }
+    .missing { color: red; }
+  </style>
+</head>
+<body>
+  <h1>What can I cook with these ingredients?</h1>
+  <p>Enter your ingredients (comma separated!):</p>
+  <input type="text" id="ingredientsInput" placeholder="e.g. eggs, tomato, onion" size="50" />
+  <button id="searchBtn">Find Recipes</button>
+
+  <div id="recipeContainer"></div>
+  <button id="tryAgainBtn" style="display:none;">Try another recipe</button>
+
+  <script src="script.js"></script>
+</body>
+</html>

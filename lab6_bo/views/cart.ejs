@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Your Cart</title>
+</head>
+<body>
+  <h1>Your Shopping Cart</h1>
+  <% if (message) { %><p><%= message %></p><% } %>
+  <ul>
+    <% items.forEach(item => { %>
+      <li>
+        <strong><%= item.name %></strong> - <%= item.description %>
+        <form action="/remove-from-cart" method="POST" style="display:inline">
+          <input type="hidden" name="productId" value="<%= item.id %>">
+          <button type="submit">Remove</button>
+        </form>
+      </li>
+    <% }); %>
+  </ul>
+  <form action="/cancel" method="POST">
+    <button type="submit">Cancel Purchase</button>
+  </form>
+  <form action="/finalize" method="POST">
+    <button type="submit">Finalize Purchase</button>
+  </form>
+  <a href="/">Back to Store</a>
+</body>
+</html>

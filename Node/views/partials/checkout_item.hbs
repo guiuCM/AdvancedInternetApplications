@@ -1,0 +1,37 @@
+<div class="row col-12 border-top border-bottom border-light p-2 p-md-3">
+    <div class="col-md-2 col-4">
+        <img src="{{this.item.img}}" alt="..." class="img-thumbnail-small float-left mr-1 img-responsive">
+    </div>
+    <div class="col-md-8 col-6">
+        <div class="row">
+            <div class="col-12">
+                <h5><strong>{{this.item.name}}</strong></h5>
+            </div>
+            <div class="col-12">
+                <h5 class="text-right text-primary position-relative">
+                    {{this.qty}} x {{this.item.price}} zł ({{this.price}} zł)
+                </h5>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2 col-2 d-flex flex-column">
+        <form method="post" action="/add-to-cart" class="align-self-end">
+            <input type="text" style="display:none" value="{{this.item._id}}" name="id">
+            <input type="number" style="display:none" value="1"
+                   name="amount">
+            <button type="submit" value="Submit"
+                    class="btn btn-sm btn-success text-white text-uppercase align-self-center" role="button">
+                <i class="fas fa-plus"></i>
+            </button>
+        </form>
+        <form method="post" action="/remove-from-cart" class="align-self-end">
+            <input type="text" style="display:none" value="{{this.item._id}}" name="id">
+            <input type="number" style="display:none" value="1"
+                   name="amount">
+            <button type="submit" value="Submit"
+                    class="btn btn-sm btn-danger text-white text-uppercase align-self-center" role="button">
+                <i class="fas fa-minus"></i>
+            </button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+<div class="col-sm-12 col-md-6 col-lg-4 border border-light {{#if this.no_items}}{{else}}disabled-inputs{{/if}} rounded p-2 p-md-3">
+    <div class="thumbnail">
+        <div class="float-none d-flex justify-content-between">
+            <h5><strong>{{ this.name }}</strong></h5>
+            <h5 class="text-right price text-primary position-relative">
+                {{ this.price }} zł
+            </h5>
+        </div>
+        <div class="clearfix float-none pb-2">
+            <div class="position-relative available-info">
+                {{#if this.no_items}}
+                    <small class="text-info text-muted">
+                        #{{this.no_items}} available
+                    </small>
+                {{else}}
+                    <small class="text-danger">
+                        unavailable
+                    </small>
+                {{/if}}
+            </div>
+        </div>
+        <img src="{{ this.img }}" alt="..." class="img-thumbnail float-left mr-1 img-responsive">
+        <div class="caption d-flex flex-column justify-content-end description-wrapper">
+            <p class="description">{{ this.desc }}</p>
+            <form method="post" action="/add-to-cart" class="d-flex justify-content-end mt-auto">
+                <input type="text" style="display:none" value="{{this._id}}" name="id">
+                <input type="number" class="form-control text-center amount mr-2" value="1" name="amount">
+                <button type="submit" value="Submit" class="btn btn-sm btn-success text-white text-uppercase align-self-center" role="button">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

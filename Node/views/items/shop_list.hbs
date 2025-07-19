@@ -1,0 +1,31 @@
+{{#if results}}
+    <div class="result-modal modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Purchase results</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    {{#each results}}
+                        {{#if this.msg}}
+                            <p>Successfully bought {{this.item.qty}} &times; "{{this.item.item.name}}" for {{this.item.price}}</p>
+                        {{else}}
+                            <p>Did not buy {{this.item.qty}} &times; "{{this.item.item.name}}" for {{this.item.price}}</p>
+                        {{/if}}
+                    {{/each}}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{{/if}}
+<div class="row">
+    {{#each items}}
+        {{>shop_item}}
+    {{/each}}
+</div>

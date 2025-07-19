@@ -1,0 +1,21 @@
+<div class="container col-12">
+    {{#each session.cart.items}}
+        {{>checkout_item}}
+    {{/each}}
+    <div class="row col-12">
+        <div class="d-flex justify-content-end col-12">
+            <div class="disabled h-100 d-flex flex-column">
+                <h5 class="text-center d-block mt-auto mb-auto text-primary">
+                    {{session.cart.totalPrice}} zł ({{session.cart.totalQty}} items)
+                </h5>
+            </div>
+            <a href="/clear-cart">
+                <button class="clear-all-btn btn btn-danger text-uppercase m-2">Clear all</button>
+            </a>
+            <a href="/purchase">
+                <button class="clear-all-btn btn btn-success text-uppercase m-2">Purchase</button>
+            </a>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,46 @@
+
+.img-thumbnail {
+  max-height: 150px !important;
+  max-width: 150px !important;
+  &-small {
+    max-height: 100px !important;
+    max-width: 100px !important;
+  }
+}
+
+.price {
+  bottom: -0.5em;
+}
+
+.description {
+  &-wrapper {
+    height: 200px;
+  }
+}
+
+.available-info {
+  top: -0.5em;
+}
+
+.disabled-inputs {
+  button {
+    cursor: not-allowed;
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  input {
+    cursor: not-allowed;
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+
+.amount {
+  max-width: 5em;
+}
+
+.main {
+  &-container {
+    margin-top: 100px;
+  }
+}

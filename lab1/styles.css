@@ -1,0 +1,177 @@
+body {
+    font-family: "Times New Roman", sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: white;
+}
+
+
+header {
+    background: white;
+    color: black;
+    padding: 20px;
+    text-align: left;
+    display: flex;
+    align-items: left;
+    justify-content: space-between;
+}
+
+header img {
+    height: 120px;
+    margin-right: 10px;
+    margin-top: 20px;
+}
+
+header h1 {
+    font-size: 64px;
+    margin-right: auto;
+}
+
+
+#nav_header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar {
+    color: #000;
+    margin: 10px;
+    justify-content: flex-end;
+    display: flex;
+}
+
+/*format*/
+* {
+    box-sizing: border-box;
+  }
+  
+  .menu-links {
+    margin-left: 20px;
+    color: #000;
+    text-decoration: none;
+  }
+  
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.box {
+    width: 30%;
+    padding: 50px;
+    border: 2px solid black;
+    background: #fcf6dc;
+    position: relative; /* so you can fix the title top */
+
+}
+
+h2 {
+    margin: 0;
+    padding: 5px;
+    width: 50%;
+    border-left: 2px solid black;
+    border-bottom: 2px solid black;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-self: flex-end;
+    font-weight: normal;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+}
+
+
+.blue h2 {
+    background-color: #49a2dc;
+}
+
+.orange h2 {
+    background-color: #e89a3e;
+}
+
+.red h2 {
+    background-color: #d66a6a;
+}
+
+footer {
+    background: #fcf6dc;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    position: relative;
+    margin-top: auto;
+}
+
+
+/* Mobile */
+@media only screen and (max-width: 600px) {
+ .container {
+    flex-wrap: wrap;
+    }
+    .navbar_menu {
+    display: none;
+    }
+    .title{
+    display: none;
+    }
+    .menu {
+    display: inline-block;
+    margin: 10px;
+    }
+}
+
+/* Tablet */
+@media only screen and (min-width: 601px) and (max-width: 1023px) {
+    .navbar_menu {
+        display: none;
+    }
+    .container {
+        flex-wrap: wrap;
+    }
+    .box {
+        width: calc(50% - 24px);
+    }
+    .box:first-child {
+        width: 100%;
+    }
+    .box:first-child h2 {
+        width: 25%;
+    }
+    .menu {
+        display: inline-block;
+        top: 20px;
+        right: 20px;
+    }
+}
+/* Desktop */
+@media only screen and (min-width: 1024px) {
+    .box {
+        width: 30%;
+    }
+    .menu {
+        display: none;
+    }
+}
+
+/* better resize*/
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box {
+        width: 80%;
+    }
+}
